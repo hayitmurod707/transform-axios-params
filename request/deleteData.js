@@ -9,7 +9,7 @@ axios.interceptors.response.use(
 	response => response,
 	error => middleware(error)
 );
-const deleteData = async ({ url, options, auth }) => {
+const deleteData = async (url, options, auth = true) => {
 	try {
 		const data = await axios.delete(url, { ...getOptions(auth), ...options });
 		return { data, error: {}, status: "SUCCESS" };

@@ -1,4 +1,4 @@
-# REQUEST
+# Request
 
 Request (with axios)
 

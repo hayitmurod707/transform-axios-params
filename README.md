@@ -1,6 +1,4 @@
-# Request
-
-Request (with axios)
+# Transform axios params
 
 ## Http status codes
 

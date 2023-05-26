@@ -1,10 +1,4 @@
-export default ({
-   auth = true,
-   data,
-   options = {},
-   sendData = false,
-   url = '',
-}) => {
+export default ({ auth = true, data, options = {}, url }) => {
    const lang = localStorage.getItem('i18nextLng') || 'uz';
    const token = localStorage.getItem('token');
    const headers = auth ? { Authorization: `Bearer ${token}` } : {};
@@ -19,6 +13,7 @@ export default ({
       withCredentials: true,
       ...options,
    };
-   const params = sendData ? [url, newOptions] : [url, data, newOptions];
+   const params = data ? [url, data, newOptions] : [url, newOptions];
    return params;
 };
+// transformAxiosParams({ auth: true, data: {}, options: { params: { name: 'name' } }, url: '/profile' })
